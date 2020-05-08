@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d"     
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom" 
+            BarBackgroundColor="#1976D2"
+            BarTextColor="White"
+            android:TabbedPage.BarItemColor="#66FFFFFF"
+            android:TabbedPage.BarSelectedItemColor="White"
+            x:Class="ChatApp.TabbedPage1">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Chat Page" IconImageSource="ChatIcon">
+        <Label Text="Chat Page" VerticalOptions="Center" HorizontalOptions="Center"/>
+    </ContentPage>
+    <ContentPage Title="Profile" IconImageSource="PersonIcon">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand"  Spacing="20" Padding="10">
+            <StackLayout Padding="40">
+                <Frame  CornerRadius="100" HeightRequest="200" WidthRequest="200"  HorizontalOptions="Center" Padding="0" IsClippedToBounds="True">
+                    <Image Source="user" HorizontalOptions="Center" />
+                </Frame>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="EditIcon"/>
+                    <Label Text="Sample Name" HorizontalOptions="Center" x:Name="nameEntry" FontSize="40"/>
+                </StackLayout>
+                <Label Text="SampleEmail@gmail.com" HorizontalOptions="Center" x:Name="emailEntry" FontSize="25"/>
+            </StackLayout>
+            <Button Text="Sign out" BackgroundColor="LightGray"  CornerRadius="5" Clicked="SignOut" HeightRequest="50"/>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

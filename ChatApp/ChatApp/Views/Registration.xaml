@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ChatApp.Registration">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="0" x:Name="layout">
+            <BoxView Color="#1976D2 " VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Spacing="20" BackgroundColor="White" Padding="10">
+                <Frame BorderColor="Black" CornerRadius="5" Padding="5" HeightRequest="40" x:Name="usernameBorder">
+                    <Entry Placeholder="Username" x:Name="username" ReturnType="Next"></Entry>
+                </Frame>
+                <Frame BorderColor="Black" CornerRadius="5" Padding="5" HeightRequest="40" x:Name="emailBorder">
+                    <Entry Keyboard="Email" Placeholder="Email" x:Name="email" ReturnType="Next"></Entry>
+                </Frame>
+                <Frame BorderColor="Black" CornerRadius="5" Padding="5" HeightRequest="40" x:Name="passBorder">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions >
+                        <Entry IsPassword="True" x:Name="Password" TextColor="Black" Placeholder="Password" Grid.Column="0" Grid.ColumnSpan="2" ReturnType="Next"/>
+                        <Button Text="Show" x:Name="ShowPass" Clicked="ShowHidePass" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" WidthRequest="60"></Button>
+                    </Grid>
+                </Frame>
+                <Frame BorderColor="Black" CornerRadius="5" Padding="5" HeightRequest="40" x:Name="confpassBorder">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions >
+                        <Entry IsPassword="True" x:Name="ConfirmPassword" TextColor="Black" Placeholder="Password" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Button Text="Show" x:Name="ShowConf" Clicked="ShowHideConf" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" WidthRequest="60"></Button>
+                    </Grid>
+                </Frame>
+                <Button Text="Sign up" BackgroundColor="LightGreen" CornerRadius="5" Clicked="Register"></Button>
+                <Button Text="Sign in to your account" BackgroundColor="LightGray" CornerRadius="5" Clicked="Login"></Button>
+                <FlexLayout JustifyContent="SpaceEvenly">
+                    <BoxView Color="Gray" HorizontalOptions="FillAndExpand" WidthRequest="125" HeightRequest="1"/>
+                    <Label Text="or" HorizontalOptions="Center"></Label>
+                    <BoxView Color="Gray" HorizontalOptions="FillAndExpand" WidthRequest="125" HeightRequest="1" />
+                </FlexLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Frame BorderColor="White" CornerRadius="5" Padding="5" WidthRequest="150">
+                        <ImageButton Source="GoogleSignUp" HorizontalOptions="Center" Clicked="Dummy"/>
+                    </Frame>
+                    <Frame BorderColor="#3B5998" BackgroundColor="#3B5998" CornerRadius="5" Padding="0" WidthRequest="150">
+                        <ImageButton Source="FacebookSignUp" HorizontalOptions="Center" Clicked="Dummy"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
